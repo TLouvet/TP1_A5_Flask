@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "c4f62ec9-aaa1-41a8-8211-a6ee34c6beb5",
+		"name": "Tasks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin - Fail 401",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "FindAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindAll - Query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/tasks?status=TODO",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "TODO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/tasks/abd2af4d-c179-46b1-adf2-1598b9fca6ab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"abd2af4d-c179-46b1-adf2-1598b9fca6ab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindOne - Fail 404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/tasks/a0d2af4d-c179-46b1-adf2-1598b9fca6ab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"a0d2af4d-c179-46b1-adf2-1598b9fca6ab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creation - success",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Le nom de ma tâche\",\r\n    \"description\": \"La desc de ma tâche\",\r\n    \"status\": \"DONE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creation - Fail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Le nom de ma tâche\",\r\n    \"description\": \"La desc de ma tâche\",\r\n    \"status\": \"DONE\",\r\n    \"attr\": \"shouldfail\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update - Success",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Modification du titre\",\r\n    \"description\": \"Desc update\",\r\n    \"status\": \"IN PROGRESS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks/abd2af4d-c179-46b1-adf2-1598b9fca6ab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"abd2af4d-c179-46b1-adf2-1598b9fca6ab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update - Fail 404",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Modification du titre\",\r\n    \"description\": \"Desc update\",\r\n    \"status\": \"IN PROGRESS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks/a0d2af4d-c179-46b1-adf2-1598b9fca6ab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"a0d2af4d-c179-46b1-adf2-1598b9fca6ab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update - Fail 400",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Modification du titre\",\r\n    \"description\": \"Desc update\",\r\n    \"status\": \"IN PROGRESS\",\r\n    \"attr\": \"shouldfail\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks/abd2af4d-c179-46b1-adf2-1598b9fca6ab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"abd2af4d-c179-46b1-adf2-1598b9fca6ab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch - Success",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Patch du titre\",\r\n    \"status\": \"IN PROGRESS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks/0316ff74-1711-4774-b6d6-300f3ce9fd57",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"0316ff74-1711-4774-b6d6-300f3ce9fd57"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch - Fail 400",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Patch du titre\",\r\n    \"status\": \"IN PROGRESS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks/0316ff74-1711-4774-b6d6-300f3ce9fd57",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"0316ff74-1711-4774-b6d6-300f3ce9fd57"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch - Fail 404",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Patch du titre\",\r\n    \"status\": \"IN PROGRESS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/tasks/a0d2af4d-c179-46b1-adf2-1598b9fca6ab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"a0d2af4d-c179-46b1-adf2-1598b9fca6ab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/tasks/abd2af4d-c179-46b1-adf2-1598b9fca6ab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tasks",
+						"abd2af4d-c179-46b1-adf2-1598b9fca6ab"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
